@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: IBM-MQ-Example
+
+  jms:
+    listener:
+      concurrency: 1
+    listenerContainer:
+      default:
+        concurrency: 1
+
+ibm:
+  mq:
+    host: localhost          # Replace with the actual IBM MQ host
+    port: 12234          # Replace with the actual IBM MQ port
+    connName: localhost(12234) #localhost(1414)
+    channel: MQ.QS.SVRCONN  #DEV.ADMIN.SVRCONN #  # Replace with the actual IBM MQ channel name
+    queueManager: QM  # Replace with the actual IBM MQ queue manager name
+    queueName: QUEUE1        # Replace with the actual IBM MQ queue name
+    userName: lbnadmin #lbnni@LAPTOP-E56ADFC5 #lbnni
+    password: ENC(VWOmsbmpOHhDbY1Fx+tDOfF3QG4gpbWM)
+
+jasypt:
+  encryptor:
+    poolSize: 4
+    password: password
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+    algorithm: PBEWithMD5AndDES
